@@ -18,12 +18,38 @@
             --line: #d4d4d8;
         }
 
+        /* LIGHT THEME */
         body.light {
             --bg: #f5f5f5;
             --text: #111;
             --muted: #555;
             --muted2: #666;
             --line: #222;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        .quote,
+        .theme-icon,
+        .group-note {
+            color: var(--muted);
+        }
+
+        .group-tag {
+            color: var(--muted2);
+        }
+
+        .todo-list,
+        .bottom-link,
+        .socials a {
+            color: var(--text);
+        }
+
+        .bottom-link::after {
+            background: var(--line);
         }
 
         body {
@@ -35,7 +61,6 @@
             min-height: 100vh;
             font-size: 1.1rem;
             line-height: 1.4;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         a {
@@ -44,11 +69,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* LINKS */
         .hover-link,
         .bottom-link,
         .socials a {
-            transition: color 0.35s ease, transform 0.35s ease;
+            transition: color 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
         }
 
         .hover-link:hover,
@@ -57,7 +81,7 @@
             color: var(--muted2);
         }
 
-        /* TOP BAR */
+        /* Top Bar */
         .top-bar {
             max-width: 1280px;
             margin: 0 auto;
@@ -70,16 +94,16 @@
         .quote {
             font-style: italic;
             font-size: 1.1rem;
-            color: var(--muted);
+            color: #a1a1aa;
         }
 
         .theme-icon {
-            color: var(--muted);
+            color: #a1a1aa;
             font-size: 1.8rem;
             cursor: pointer;
         }
 
-        /* HOVER PREVIEW */
+        /* Hover preview */
         .hover-preview {
             height: 40px;
             display: flex;
@@ -87,14 +111,14 @@
             justify-content: center;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            color: var(--text);
+            color: white;
             font-size: 1.6rem;
             opacity: 0;
             filter: blur(10px);
             transition: opacity 0.25s ease, filter 0.25s ease;
         }
 
-        /* MAIN */
+        /* Main content */
         .main-content {
             width: 100%;
             max-width: 700px;
@@ -127,7 +151,7 @@
 
         .group-tag {
             font-size: 2rem;
-            color: var(--muted2);
+            color: #71717a;
         }
 
         .group-links {
@@ -136,10 +160,10 @@
 
         .group-note {
             font-size: 1.1rem;
-            color: var(--muted);
+            color: #71717a;
         }
 
-        /* SOCIALS FIX */
+        /* Socials */
         .socials {
             display: flex;
             justify-content: center;
@@ -149,28 +173,36 @@
 
         .socials a {
             font-size: 2rem;
-            color: var(--muted);
-        }
-
-        .socials a:hover {
-            color: var(--text);
+            color: #a1a1aa;
         }
 
         .reply-text {
             font-size: 0.9rem;
-            color: var(--muted);
+            color: #52525b;
             margin-top: 0.5rem;
         }
 
-        /* BOTTOM SECTION */
+        /* Bottom section */
         .bottom-section {
             width: 100%;
             max-width: 700px;
             margin: 7rem auto 0;
             padding: 0 1.5rem 5rem;
+            box-sizing: border-box;
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: end;
+        }
+
+        .todo-section {
+            align-self: end;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            color: var(--muted2);
+            margin-bottom: 1rem;
         }
 
         .todo-list {
@@ -181,11 +213,14 @@
             font-size: 1.15rem;
         }
 
-        .section-title {
-            font-size: 1.25rem;
-            letter-spacing: 2px;
-            color: var(--muted2);
-            margin-bottom: 1rem;
+        .todo-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .completed {
+            opacity: 1;
         }
 
         .bottom-links {
@@ -194,6 +229,7 @@
             align-items: flex-end;
             text-align: right;
             gap: 0.55rem;
+            align-self: end;
         }
 
         .bottom-link {
@@ -210,11 +246,12 @@
             bottom: 0;
             width: 100%;
             height: 1px;
-            background: var(--line);
+            background: #d4d4d8;
         }
 
-        /* MOBILE */
+        /* Mobile */
         @media (max-width: 768px) {
+
             .top-bar {
                 padding: 1.5rem;
             }
@@ -222,15 +259,27 @@
             .group-row {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.6rem;
             }
 
             .group-left {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.3rem;
+            }
+
+            .group-links,
+            .group-tag {
+                font-size: 1.7rem;
             }
 
             .socials {
                 gap: 1.3rem;
+            }
+
+            .bottom-section {
+                gap: 2rem;
+                padding: 0 1.5rem 5rem;
             }
         }
     </style>
@@ -286,11 +335,11 @@
         </div>
 
         <div class="socials">
-            <a href="https://github.com/singhvijayp"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/brutus0xf"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/singhvijaypr"><i class="fab fa-instagram"></i></a>
-            <a href="https://singhvijayp.medium.com"><i class="fab fa-medium"></i></a>
-            <a href="https://linkedin.com/in/singhvijayp"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-medium"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
 
         <div class="reply-text">I reply</div>
@@ -300,21 +349,24 @@
     <div class="bottom-section">
 
         <div class="todo-section">
+
             <div class="section-title">todo:</div>
+
             <div class="todo-list">
-                <div>✓ learn ui/ux</div>
-                <div>✓ build my product</div>
-                <div>☐ learn marketing</div>
-                <div>☐ launch my product</div>
-                <div>☐ go outside more</div>
+                <div class="todo-item"><span>✓</span><span>learn ui/ux</span></div>
+                <div class="todo-item"><span>✓</span><span>build my product</span></div>
+                <div class="todo-item"><span>☐</span><span>learn marketing</span></div>
+                <div class="todo-item"><span>☐</span><span>launch my product</span></div>
+                <div class="todo-item"><span>☐</span><span>go outside more</span></div>
             </div>
+
         </div>
 
         <div class="bottom-links">
-            <a href="playground.html" class="bottom-link">playground</a>
-            <a href="my-life-rn.html" class="bottom-link">my life rn</a>
-            <a href="recommendations.html" class="bottom-link">recommendations</a>
-            <a href="what-i-use.html" class="bottom-link">what i use</a>
+            <a href="playground.html" class="bottom-link" data-hover="experiments & random stuff">playground</a>
+            <a href="my-life-rn.html" class="bottom-link" data-hover="what's happening currently">my life rn</a>
+            <a href="recommendations.html" class="bottom-link" data-hover="things i enjoy">recommendations</a>
+            <a href="what-i-use.html" class="bottom-link" data-hover="my tools & setup">what i use</a>
         </div>
 
     </div>
@@ -325,7 +377,9 @@
         themeIcon.addEventListener('click', () => {
             document.body.classList.toggle('light');
 
-            themeIcon.innerHTML = document.body.classList.contains('light')
+            const isLight = document.body.classList.contains('light');
+
+            themeIcon.innerHTML = isLight
                 ? '<i class="fas fa-sun"></i>'
                 : '<i class="fas fa-moon"></i>';
         });
@@ -341,11 +395,32 @@
         function hide() {
             hoverPreview.style.opacity = "0";
             hoverPreview.style.filter = "blur(10px)";
+            hoverPreview.textContent = "";
         }
+
+        hide();
 
         document.querySelectorAll('[data-hover]').forEach(el => {
             el.addEventListener('mouseenter', () => show(el.dataset.hover));
             el.addEventListener('mouseleave', hide);
+        });
+
+        document.querySelectorAll('.socials a').forEach(link => {
+
+            const icon = link.querySelector('i');
+            if (!icon) return;
+
+            let text = "";
+
+            if (icon.classList.contains('fa-github')) text = "my code repositories";
+            else if (icon.classList.contains('fa-twitter')) text = "random thoughts online";
+            else if (icon.classList.contains('fa-instagram')) text = "photos & stories";
+            else if (icon.classList.contains('fa-medium')) text = "long-form writing";
+            else if (icon.classList.contains('fa-linkedin')) text = "professional presence";
+
+            link.addEventListener('mouseenter', () => show(text));
+            link.addEventListener('mouseleave', hide);
+
         });
 
     </script>
