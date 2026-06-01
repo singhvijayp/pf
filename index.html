@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #000;
+            --text: #fff;
+            --muted: #a1a1aa;
+            --muted2: #71717a;
+            --line: #d4d4d8;
+        }
+
+        body.light {
+            --bg: #f5f5f5;
+            --text: #111;
+            --muted: #555;
+            --muted2: #666;
+            --line: #222;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* LINKS */
+        .hover-link,
+        .bottom-link,
+        .socials a {
+            transition: color 0.35s ease, transform 0.35s ease;
+        }
+
+        .hover-link:hover,
+        .bottom-link:hover,
+        .socials a:hover {
+            color: var(--muted2);
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        .theme-icon {
+            color: var(--muted);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* HOVER PREVIEW */
+        .hover-preview {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-size: 1.6rem;
+            opacity: 0;
+            filter: blur(10px);
+            transition: opacity 0.25s ease, filter 0.25s ease;
+        }
+
+        /* MAIN */
+        .main-content {
+            width: 100%;
+            max-width: 700px;
+            margin: 6rem auto 0;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+
+        .main-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .group-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            width: 100%;
+            max-width: 32rem;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .group-left {
+            display: flex;
+            align-items: baseline;
+            gap: 1.2rem;
+        }
+
+        .group-tag {
+            font-size: 2rem;
+            color: var(--muted2);
+        }
+
+        .group-links {
+            font-size: 2rem;
+        }
+
+        .group-note {
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+
+        /* SOCIALS FIX */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .socials a {
+            font-size: 2rem;
+            color: var(--muted);
+        }
+
+        .socials a:hover {
+            color: var(--text);
+        }
+
+        .reply-text {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 0.5rem;
+        }
+
+        /* BOTTOM SECTION */
+        .bottom-section {
+            width: 100%;
+            max-width: 700px;
+            margin: 7rem auto 0;
+            padding: 0 1.5rem 5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+        }
+
+        .todo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: var(--text);
+            font-size: 1.15rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            color: var(--muted2);
+            margin-bottom: 1rem;
+        }
+
+        .bottom-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            gap: 0.55rem;
+        }
+
+        .bottom-link {
+            position: relative;
+            color: var(--text);
+            font-size: 1.2rem;
+            padding-bottom: 3px;
+        }
+
+        .bottom-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--line);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .top-bar {
+                padding: 1.5rem;
+            }
+
+            .group-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .group-left {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .socials {
+                gap: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="quote">"Do what you can, with what you have, where you are."</div>
+        <div class="theme-icon"><i class="fas fa-moon"></i></div>
+    </div>
+
+    <div class="hover-preview" id="hoverPreview"></div>
+
+    <div class="main-content">
+
+        <div class="main-groups">
+
+            <div class="group-row">
+                <div class="group-left">
+                    <span class="group-tag">[meta]</span>
+                    <span class="group-links">
+                        <a href="about.html" class="hover-link" data-hover="who i am">about</a>,
+                        <a href="education.html" class="hover-link" data-hover="what i studied">education</a>
+                    </span>
+                </div>
+                <div class="group-note">selectively available</div>
+            </div>
+
+            <div class="group-row">
+                <div class="group-left">
+                    <span class="group-tag">[tech]</span>
+                    <span class="group-links">
+                        <a href="projects.html" class="hover-link" data-hover="things i built">projects</a>,
+                        <a href="blog.html" class="hover-link" data-hover="thoughts & writing">blog</a>,
+                        <a href="experience.html" class="hover-link" data-hover="places i've worked">experience</a>
+                    </span>
+                </div>
+                <div class="group-note">only 2 / 4</div>
+            </div>
+
+            <div class="group-row">
+                <div class="group-left">
+                    <span class="group-tag">[misc]</span>
+                    <span class="group-links">
+                        <a href="gallery.html" class="hover-link" data-hover="moments & visuals">gallery</a>,
+                        <a href="philosophy.html" class="hover-link" data-hover="things i believe">philosophy</a>
+                    </span>
+                </div>
+                <div class="group-note">idk</div>
+            </div>
+
+        </div>
+
+        <div class="socials">
+            <a href="https://github.com/singhvijayp"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/brutus0xf"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/singhvijaypr"><i class="fab fa-instagram"></i></a>
+            <a href="https://singhvijayp.medium.com"><i class="fab fa-medium"></i></a>
+            <a href="https://linkedin.com/in/singhvijayp"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="reply-text">I reply</div>
+
+    </div>
+
+    <div class="bottom-section">
+
+        <div class="todo-section">
+            <div class="section-title">todo:</div>
+            <div class="todo-list">
+                <div>✓ learn ui/ux</div>
+                <div>✓ build my product</div>
+                <div>☐ learn marketing</div>
+                <div>☐ launch my product</div>
+                <div>☐ go outside more</div>
+            </div>
+        </div>
+
+        <div class="bottom-links">
+            <a href="playground.html" class="bottom-link">playground</a>
+            <a href="my-life-rn.html" class="bottom-link">my life rn</a>
+            <a href="recommendations.html" class="bottom-link">recommendations</a>
+            <a href="what-i-use.html" class="bottom-link">what i use</a>
+        </div>
+
+    </div>
+
+    <script>
+        const themeIcon = document.querySelector('.theme-icon');
+
+        themeIcon.addEventListener('click', () => {
+            document.body.classList.toggle('light');
+
+            themeIcon.innerHTML = document.body.classList.contains('light')
+                ? '<i class="fas fa-sun"></i>'
+                : '<i class="fas fa-moon"></i>';
+        });
+
+        const hoverPreview = document.getElementById('hoverPreview');
+
+        function show(text) {
+            hoverPreview.textContent = text;
+            hoverPreview.style.opacity = "1";
+            hoverPreview.style.filter = "blur(0px)";
+        }
+
+        function hide() {
+            hoverPreview.style.opacity = "0";
+            hoverPreview.style.filter = "blur(10px)";
+        }
+
+        document.querySelectorAll('[data-hover]').forEach(el => {
+            el.addEventListener('mouseenter', () => show(el.dataset.hover));
+            el.addEventListener('mouseleave', hide);
+        });
+
+    </script>
+
+</body>
+
+</html>
