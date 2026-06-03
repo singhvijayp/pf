@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- TOP -->
+    <div class="top-bar">
+        <a href="../index.html" class="back-link">← back</a>
+
+        <div class="theme-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <!-- WRAPPER -->
+    <div class="philosophy-layout">
+
+        <!-- LEFT LABELS -->
+        <div class="philosophy-sidebar">
+
+            <span class="philosophy-link" data-title="building"
+                data-text="good software should feel invisible. the interface disappears and only intent remains.">
+                [building]
+            </span>
+
+            <span class="philosophy-link" data-title="learning"
+                data-text="depth matters more than speed. understanding something slowly is still understanding.">
+                [learning]
+            </span>
+
+            <span class="philosophy-link" data-title="internet"
+                data-text="the internet rewards noise but meaningful work usually happens quietly.">
+                [internet]
+            </span>
+
+            <span class="philosophy-link" data-title="life"
+                data-text="most people need less information and more uninterrupted time.">
+                [life]
+            </span>
+
+            <span class="philosophy-link" data-title="design"
+                data-text="simplicity is difficult because clarity requires thought.">
+                [design]
+            </span>
+
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="philosophy-content">
+
+            <div class="philosophy-text" id="philosophyText">
+                Select a topic to read my current thoughts.
+                I expect to disagree with some of this in a few years,
+                but this is where I am right now.
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="quick-links philosophy-links">
+        <a href="../about/index.html">about</a>
+        <a href="../projects/index.html">projects</a>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+
+        const philosophyLinks = document.querySelectorAll('.philosophy-link');
+
+        const philosophyText = document.getElementById('philosophyText');
+
+        philosophyLinks.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                philosophyLinks.forEach(l => l.classList.remove('active'));
+
+                link.classList.add('active');
+
+                philosophyText.style.opacity = "0";
+
+                setTimeout(() => {
+
+                    philosophyText.textContent = link.dataset.text;
+
+                    philosophyText.style.opacity = "1";
+
+                }, 150);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
