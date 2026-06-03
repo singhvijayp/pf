@@ -89,7 +89,7 @@ a {
     color: #a1a1aa;
 
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease;
 }
 
 .quote.fade {
