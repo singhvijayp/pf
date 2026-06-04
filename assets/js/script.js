@@ -133,13 +133,13 @@ document.querySelectorAll('.socials a').forEach(link => {
     let text = "";
 
     if (icon.classList.contains('fa-github'))
-        text = "my code repositories";
+        text = "my code & repositories";
 
     else if (icon.classList.contains('fa-twitter'))
         text = "random thoughts online";
 
     else if (icon.classList.contains('fa-instagram'))
-        text = "photos & stories";
+        text = "strictly non-professional";
 
     else if (icon.classList.contains('fa-medium'))
         text = "long-form writing";
