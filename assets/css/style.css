@@ -309,20 +309,41 @@ a {
     margin-bottom: 1.5rem;
 }
 
-/* CURRENTLY */
-
-.currently-list {
-    padding-left: 1.4rem;
-    margin: 0;
-
+.notes-text {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1rem;
+    max-width: 620px;
 }
 
-.currently-list li {
-    font-size: 1.7rem;
-    line-height: 1.5;
+.notes-text p {
+    margin: 0;
+    line-height: 1.7;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+.contact-block {
+    margin-top: 0.5rem;
+}
+
+.contact-title {
+    color: var(--muted2);
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.mail-link {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--muted2);
+    padding-bottom: 2px;
+}
+
+.contact-note {
+    color: var(--muted);
+    font-size: 0.98rem;
 }
 
 /* RIGHT SIDE */
@@ -481,47 +502,44 @@ a {
     margin-bottom: 4rem;
 }
 
-/* JOURNEY */
+/* =========================
+   EDUCATION JOURNEY
+========================= */
 
 .journey {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-
-    position: relative;
+    gap: 2rem;
 }
 
+/* vertical line */
 .journey::before {
     content: '';
 
     position: absolute;
 
-    left: 120px;
-    top: 0;
+    left: 4px;
+    top: 1rem;
 
     width: 1px;
-    height: 100%;
+    height: calc(100% - 2rem);
 
     background: var(--line);
 }
 
+/* item */
 .journey-item {
-    display: grid;
-
-    grid-template-columns: 90px 1fr;
-
-    gap: 3rem;
-
     position: relative;
+    padding-left: 2.5rem;
 }
 
-.journey-item::before {
-    content: '';
-
+/* dot */
+.journey-dot {
     position: absolute;
 
-    left: 115px;
-    top: 10px;
+    left: 0;
+    top: 2.15rem;
 
     width: 10px;
     height: 10px;
@@ -531,26 +549,48 @@ a {
     background: var(--text);
 }
 
-.journey-years {
-    color: var(--muted2);
-    font-size: 1.2rem;
+/* content */
+.journey-content {
+    display: flex;
+    flex-direction: column;
 }
 
-.journey-content h2 {
+/* top row */
+.journey-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 1.15rem;
+}
+
+/* title */
+.journey-top h2 {
     margin: 0;
+    
     font-size: 2rem;
     font-weight: 600;
 }
 
+/* years */
+.journey-years {
+    color: var(--muted2);
+    font-size: 1.1rem;
+    white-space: nowrap;
+    opacity: 0.8;
+}
+
+/* place */
 .journey-place {
     color: var(--muted2);
 
     margin-top: 0.2rem;
     margin-bottom: 1rem;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
+/* list */
 .journey-content ul {
     padding-left: 1.2rem;
     margin: 0;
@@ -565,6 +605,13 @@ a {
 
 .certifications {
     margin-top: 5rem;
+}
+
+.cert-title {
+    font-size: 2.25rem;
+    letter-spacing: 2px;
+    color: var(--text);
+    margin-bottom: 1rem;
 }
 
 .cert-link {
@@ -1911,31 +1958,77 @@ body.light .blog-card {
     }
 
     .education-wrapper {
-        padding: 0 1.5rem 5rem;
+        padding: 2rem 1.4rem 4rem;
+    }
+
+    .education-heading {
+        font-size: 2.4rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .education-sub {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .journey {
+        gap: 2rem;
     }
 
     .journey::before {
-        left: 0;
+        left: 4px;
+        top: 1rem;
+        height: calc(100% - 2rem);
     }
 
     .journey-item {
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-
         padding-left: 2rem;
     }
 
-    .journey-item::before {
-        left: -5px;
+    .journey-dot {
+        left: 0;
+        top: 2.2rem;
+
+        width: 9px;
+        height: 9px;
+    }
+
+    /* top row */
+    .journey-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+    }
+
+    /* title */
+    .journey-top h2 {
+        font-size: 1.55rem;
+        line-height: 1.2;
     }
 
     .journey-years {
-        font-size: 1rem;
+        font-size: 0.88rem;
+        opacity: 0.75;
     }
 
-    .journey-content h2 {
-        font-size: 1.7rem;
+    /* place */
+    .journey-place {
+        font-size: 0.98rem;
+
+        margin-top: 0.25rem;
+        margin-bottom: 0.9rem;
+    }
+
+    /* list */
+    .journey-content ul {
+        padding-left: 1rem;
+    }
+
+    .journey-content li {
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     .cert-image-box {
