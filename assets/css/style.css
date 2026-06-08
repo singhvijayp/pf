@@ -141,6 +141,7 @@ a {
     max-width: 32rem;
     margin: 0 auto;
     gap: 1rem;
+    white-space: nowrap;
 }
 
 .group-left {
@@ -197,6 +198,7 @@ a {
 
 .todo-section {
     align-self: end;
+    white-space: nowrap;
 }
 
 .section-title {
