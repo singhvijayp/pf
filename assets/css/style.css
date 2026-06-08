@@ -976,45 +976,6 @@ body.light .blog-card {
     opacity: 0.9;
 }
 
-/* QUICK LINKS */
-
-.project-quick-links {
-    width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    padding: 0 1.5rem 5rem;
-
-    display: flex;
-    gap: 2rem;
-
-    align-items: center;
-
-    box-sizing: border-box;
-}
-
-.project-quick-links a {
-    position: relative;
-
-    font-size: 1.2rem;
-    color: var(--text);
-}
-
-.project-quick-links a::after {
-    content: '';
-
-    position: absolute;
-
-    left: 0;
-    bottom: -3px;
-
-    width: 100%;
-    height: 1px;
-
-    background: var(--muted2);
-}
-
 /* =========================
    GALLERY PAGE
 ========================= */
@@ -1086,29 +1047,6 @@ body.light .blog-card {
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
-}
-
-/* QUICK LINKS */
-
-.quick-links {
-    margin-top: 2rem;
-    display: flex;
-    gap: 2rem;
-}
-
-.quick-links a {
-    position: relative;
-    color: var(--text);
-}
-
-.quick-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 1px;
-    background: var(--muted2);
 }
 
 /* =========================
@@ -1370,20 +1308,6 @@ body.light .blog-card {
     background: var(--muted2);
 }
 
-/* QUICK LINKS */
-
-.playground-links {
-    max-width: 1200px;
-
-    margin: 3rem auto 4rem;
-
-    padding: 0 3rem;
-
-    display: flex;
-
-    gap: 2rem;
-}
-
 /* =========================
    MY LIFE RN PAGE
 ========================= */
@@ -1476,20 +1400,6 @@ body.light .blog-card {
     color: var(--text);
 
     max-width: 500px;
-}
-
-/* QUICK LINKS */
-
-.life-links {
-    max-width: 1200px;
-
-    margin: 3rem auto 4rem;
-
-    padding: 0 3rem;
-
-    display: flex;
-
-    gap: 2rem;
 }
 
 /* =========================
@@ -1594,20 +1504,6 @@ body.light .blog-card {
     line-height: 1.7;
 }
 
-/* QUICK LINKS */
-
-.recommend-links {
-    max-width: 1200px;
-
-    margin: 3rem auto 4rem;
-
-    padding: 0 3rem;
-
-    display: flex;
-
-    gap: 2rem;
-}
-
 /* =========================
    WHAT I USE PAGE
 ========================= */
@@ -1708,20 +1604,6 @@ body.light .blog-card {
     font-size: 0.95rem;
 
     line-height: 1.7;
-}
-
-/* QUICK LINKS */
-
-.uses-links {
-    max-width: 1200px;
-
-    margin: 3rem auto 4rem;
-
-    padding: 0 3rem;
-
-    display: flex;
-
-    gap: 2rem;
 }
 
 /* =========================
@@ -1849,20 +1731,6 @@ body.light .blog-card {
     color: var(--muted2);
 
     font-size: 1rem;
-}
-
-/* QUICK LINKS */
-
-.post-links {
-    max-width: 850px;
-
-    margin: 3rem auto 4rem;
-
-    padding: 0 3rem;
-
-    display: flex;
-
-    gap: 2rem;
 }
 
 /* Mobile */
